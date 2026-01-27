@@ -1,0 +1,12 @@
+terminal commands
+
+1. ll  - lists all the inside files and folders of current dir.
+2. pwd  - shows current dir path
+3. cd /home/saran-st/docuemnts - move to the sepecified dir
+4. cd ..  - moves to previous folder
+5. ctrl+alt+t  - to open powershell
+6. ls  - list all items
+7. ls -la  - lists all items inc. hidden files
+8. mkdir  - to create a new folder
+9. touch  - to create a new file
+10. ps  - to view currently running activities

@@ -1,0 +1,33 @@
+                     ---- GIT ----
+
+1. git init - initializing git local repository
+2. git status - shows unsaved changes
+3. to save the changes to the stage ways 
+      1. git add --A  - stages all changes
+      2. git add --all - same as --A
+      3. git add .  - stages the changes under the current directory only not the entire project folder
+      4. git add *  - stages only the new or modified data and does not change the deleted data
+      5. git add *.txt  - stages all text files
+4. git clone (repo link)  - to clone the remote repository to local folder 
+5. git reset - unsaves the recent staged changes
+6. git reset --hard  - to retreive the deleted files 
+7. to delete a file and stage at the same time
+        1. git rm file.txt - removes the committed file
+        2. git rm --f file.txt  - force deletes if changes not committed
+        3. git rm --cached file.txt  - deleted file only from stage not from the local device
+        4. git rm folder_name   - deletes the folder only
+        5. git rm --r folder_name  - deleted the folder with all of its sub folders  
+8. git commit -m "commit msg"  - commit
+9. git log  - to view the list of all commmits
+10. git branch new_branch_name  - creates a new branch
+11. git checkout branch_name  - switches the mentioned branch 
+12. if both master and side branches are changed and committed in a same line then arises " merge conflict " during merging both the branches. must be resolved mannually
+13. git checkout "commit-id"  - to go back to the previous project version of particular commit
+14. git diff "recent commit id" "prev commit id"  - to identify the difference between 2 commits, whats added and whats removed
+15. git fetch  - to fetch the direct changes made in remote repo
+16. git merge  - to merge the fetched changes
+17. git pull  - fetch+ merge
+18. git restore file/folder name / .(whole repo)  - reverts to the recent commited version
+19. git stash / git stash pop  - to switch branches without losing changes made in current branch (not merged with main)
+
+

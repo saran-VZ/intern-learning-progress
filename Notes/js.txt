@@ -1,0 +1,42 @@
+%% execution context :-
+1. env where js code runs
+2. memeroy and code component
+3. each fuction has its own local execution context
+
+%% Hoisting :-
+1. functions - hoisted with code
+2. var- hoisted as undefined , let & const hoisted in TDZ (reference error is encountered)
+
+%% variable scope :-
+1. var, let, const
+2. window - global object , has the properties of global variables, created uniquely for execution context
+3. this - refers to the object/func that is executing currently
+4. var - global scoped, redeclared, redefined
+5. let - block scoped , redeclared , can be declared without value and then can be initialized
+6. const - block scoped , only be initialized with values and no redeclaration or redefinition
+
+%% closures :-
+1. func that rememebers value from our if its scope even when the other function has aldready been executed
+
+%% setTimeout :-
+1. asynchronous function
+2. setTimeout( func(), 3000[ms]);
+
+%% functions js
+1. function statement / declaration - defining a nrml function with keyword "function"
+2. function expression - assigning a function to a variable. the difference is that hoisting. it is hoisted as same as any other variable
+3. anonymous function - functions without a name, used when assigning it to a varibale
+4. arrow functions -single line consice syntax for function but behaves like a variable , not hoisted with code
+     * const sayHi = () => alert("Hello!") // console.log("hello"); *
+5. first class function - ability of functions accepting another functions as arguments, to assign func to variable and return function
+
+%% asyncronous js
+1. call stack(handles sync os) vs callback queue(handles async ops) [ micro and macro ]
+2. micro tasks- setTimeout,setinterval , macro tasks- promise (high priority) 
+3. promise - object that reperesents eventual completion of a aync op ( stages- pending/fulfilled/rejected)(resolve & reject)
+2. settimeout,window object,DOM,fetch() - web APIs provided by browser
+
+
+
+
+

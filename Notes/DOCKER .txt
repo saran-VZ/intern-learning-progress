@@ -1,0 +1,42 @@
+                     ** DOCKER **
+                   
+1.  architecture  -  docker client  -> docker host [ container & images ] -> docker hub [ from where images are pulled ]
+2. docker container is created using a docker image
+3. docker image created using base dockerfile[base OS , dependencies] with commands like(label,from,cmd ext..)
+4. docker image is a read only static template that contains all the necessary dependencies,base OS to run the application
+5. docker container is a live instance of image-lightweight and executable software package that bundles the appln with its dependencies.
+6. so that the appln runs smoothly in any device.
+7. commands ;-
+      1. docker run hello-world  -  run an container using hello-world image attached with the shell
+      2. docker ps - to view the currently running containers list
+      3. docker ps -a  - shows the history of containers ran
+      4. docker run -p 8081:80 image_name - runs the docker conatiner using the local image
+      5. docker run -p 8081:80 -d image_name - runs seperately , detatched from the shell
+                1. docker pause conatiner_id
+                2. docker stop container_id  
+      6. docker build -t "dockerfile-name " .  - to create a docker image from dockerfile 
+      7. docker pull "image-name:tag"  - to pull a image to local using image name with tag
+      8. docker exec -it db bash - to enter bash of the container
+                     1. df -k  - list all the drives and volumes mapped in the container[storage attatched with the container]
+                     2. ls -la  - lists all files inc hidden in a directory
+8. conatiner storage - 3 storages
+     1. tempfs  - temproary storage for each container, not shared by containers ,local files
+     2. bind mounts  - host storage files mapped with the container but handled by host , shared by multiple conatiner
+     3. volume  - same files mapped with conatiner like bind mounts but handled by the docker itself, shared by multiple customers but no file locking system. doesnt gets deleetd if we delete the container itself also can be reused. 
+9. docker run  --name db  -e MYSQL_ROOT_PASSWORD=somewordpress  -e MYSQL_PASSWORD=wordpress  -e MYSQL_DATABASE=wordpress  -e MYSQL_USER=wordpress  --mount type=bind,source="$(pwd)"/mariadb-data,target=/var/lib/mysql  -d  mariadb:10.6.4-focal  --default-authentication-plugin=mysql_native_password   -  to create a bind mount storage and map "target" folders to the host.
+         1. above is -mount type command
+         2. --v  - in this command no need to use target instead use "$(pwd)/mariadb-data:/var/lib/mysql"
+         3. docker volume create "file-name"  - to create a volume storage maaged by docker itself\
+         4. docker volume inspect "file-name"  - to list the metadata of the created volume storage\
+10. docker networking ;-
+         1. host networking - all the containers use the same host port netwrok. impossile to run different versions of the same conatiner for different clients 
+         2. bridge networking - all the containers run on same host port network wit unique ip address. so it can run different versions of same conatiner simultaneously.
+11. docker compose 
+         1. create,manage and cleanup
+         2. multi container management 
+         3. docker compose up -d  - creates the appln with multi container specified in the compose.yml fle
+         4. docker compose down - deletes and removes the created containers 
+12.docker hub 
+         1. docker login --username=""
+         2. docker push    
+         3. docker tag <image-id> <image-name>  - to rename the image before pushing it to the dockerhub repo
