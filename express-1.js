@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
     //'<h1 style="color:yellow;background-color: black; text-align:center;padding:400px;"> This is Saran server...</h1>'
   //);
   res.json({name:"saran"});
-  //res.render("ind",{name:"sarann",pos:"Mr"});
+  //res.render("ind",{name:"sarann",pos:"Mr"});       //rendering the html file ind.ejs using view engine "ejs"
 
 });
 

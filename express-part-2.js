@@ -33,6 +33,10 @@ app.get("/query",(req,res)=>{                                         //request 
     }                            
     
 })
+
+const userrouter = require("./routes/users");                         //using route "users"
+app.use("/users",userrouter);
+
 app.listen("3000",()=>{
     console.log("server running...!!");
 });
