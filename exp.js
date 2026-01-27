@@ -12,11 +12,11 @@ app.get("/", (req, res) => {
     //'<h1 style="color:yellow;background-color: black; text-align:center;padding:400px;"> This is Saran server...</h1>'
   //);
   res.json({name:"saran"});
-  //res.render("ind",{name:"sarann",pos:"Mr"});          //dynamic html template rendering using view engine 
+  //res.render("ind",{name:"sarann",pos:"Mr"});       //rendering the html file ind.ejs using view engine "ejs"
 
 });
 
 const userrouter = require("./routes/users");
-app.use("/users",userrouter);                            // requring and using the user routes from routes folder
+app.use("/users",userrouter);
 
 app.listen(3000);
